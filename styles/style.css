@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: calibri;
+}
+
+.inline {
+    display: flex;
+}
+
+/*Menu*/
+
+#logo {
+    width: 100px;
+}
+
+#tickets {
+    text-decoration: none;
+    color: rgba(49, 141, 49, 0.836);
+}
+
+#tickets:hover {
+    color: rgba(43,165,70,255);
+}
+
+/* BANNER*/
+
+#banner {
+    color: white;
+    text-align: right;
+    padding: 13% 10% 13% 40%;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url(../resources/ba1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* ORADORES */
+
+#titulo {
+    text-align: center;
+    line-height: 3%;
+}
+
+
+/* FORMULARIO */
+
+.tituloform {
+    width: 100%;
+    font-size: small;
+    text-align: center;
+    line-height: 15%;
+}
+
+#boton {
+    width: 100%;
+    background-color: rgb(151, 212, 81);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+
+#boton:hover {
+    color: rgb(23, 153, 23);
+}
+
+/*FOOTER*/
+
+footer {
+    background-color:rgb(33, 61, 92);
+}
+
+#enlaces {
+    text-decoration: none;
+    color: white;
+}
