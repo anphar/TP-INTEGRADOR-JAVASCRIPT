@@ -1,33 +1,41 @@
+const cantidad = document.querySelector(".cantidad");
+const nombre = document.querySelector("#nombre");
+const apellido = document.querySelector("#apellido");
+const email = document.querySelector("#email");
+
+
+let precio = 200;
+const estudiante = 0.2;
+const trainee = 0.5;
+const junior= 0.85;
+
 const resumen = document.querySelector("#resumen");
-resumen.addEventListener("click", precio);
+resumen.addEventListener("click", descuento);
 
 const total = document.querySelector("#borrar");
 total.addEventListener("click", borrarTotal)
 
-function precio(evento) {
+function descuento(evento) {
     evento.preventDefault();
-
-    const cantidad = document.querySelector(".cantidad");
 
     if (Number(cantidad.value)) {
         const categoria = document.querySelector(".categoria");
-        let precio = 200;
-
+        
         switch (categoria.value) {
             case "0": {
                 precio *= cantidad.value;
                 break;
             }
             case "estudiante": {
-                precio *= cantidad.value * 0.2;
+                precio *= cantidad.value * estudiante;
                 break;
             }
             case "trainee": {
-                precio *= cantidad.value * 0.5;
+                precio *= cantidad.value * trainee;
                 break;
             }
             case "junior": {
-                precio *= cantidad.value * 0.85;
+                precio *= cantidad.value * junior;
                 break;
             }
         }
@@ -37,9 +45,21 @@ function precio(evento) {
     } else {
         document.querySelector(".cantidad").style.border = "2px solid red";
         cantidad.value = "";
-        cantidad.placeholder = "Ingrese una cantidad";
+        cantidad.placeholder = "Ingrese una cantidad";       
     }
 
+    document.querySelector("#nombre").style.border = "2px solid red";
+    nombre.value = "";
+
+    document.querySelector("#apellido").style.border = "2px solid red";
+    apellido.value = "";
+
+    document.querySelector("#email").style.border = "2px solid red";
+    email.value = "";
+
+    alert("Completar los campos en rojo");
+
+    borrarTotal(evento)
 }
 
 function borrarTotal() {
