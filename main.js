@@ -6,10 +6,6 @@ let junior= 0.15;
 let totalPagar;
 
 let cantidad = document.querySelector(".cantidad");
-let nombre = document.querySelector("#nombre");
-let apellido = document.querySelector("#apellido");
-let email = document.querySelector("#email");
-
 
 let resumen = document.querySelector("#resumen");
 resumen.addEventListener("click", descuento);
@@ -24,7 +20,7 @@ function descuento(evento) {
         let categoria = document.querySelector(".categoria");
         
         switch (categoria.value) {
-            case "0": {
+            case "general": {
                 totalPagar = precio * cantidad.value;
                 break;
             }
@@ -47,9 +43,9 @@ function descuento(evento) {
     } else {
         document.querySelector(".cantidad").style.border = "2px solid red";
         cantidad.value = "";
-        cantidad.placeholder = "Ingrese una cantidad";     
-    }
-    
+        cantidad.placeholder = "Ingrese una cantidad"; 
+        alert("Completar los campos en rojo");    
+    }    
 }
 
 function borrarTotal() {
@@ -60,21 +56,5 @@ function borrarTotal() {
     for (i = 0; i < 4; i++) {
         document.querySelector(".total" + form[i].className);
     }
-}
-
-function validar () {
-    
-    document.querySelector("#nombre").style.border = "2px solid red";
-    nombre.value = "";
-
-    document.querySelector("#apellido").style.border = "2px solid red";
-    apellido.value = "";
-
-    document.querySelector("#email").style.border = "2px solid red";
-    email.value = "";
-
-
-    alert("Completar los campos en rojo");
-
-    borrarTotal(evento);
+    alert("Se borraran los datos")
 }
